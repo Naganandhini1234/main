@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -14,7 +23,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -60,6 +69,7 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 44,
@@ -68,25 +78,57 @@
     },
     "17193202967a5af0d8": {
       "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "rich_text_PMNzh3": {
+      "type": "rich-text",
       "blocks": {
-        "test_review_app_local_star_rating_NNnWfn": {
-          "type": "shopify:\/\/apps\/test-review-app-local\/blocks\/star_rating\/8303e22e-8735-42d9-9e59-bcbeed5038f7",
+        "heading_4haCWY": {
+          "type": "heading",
           "settings": {
-            "product": "",
-            "colour": "#18b1ff"
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_NERJaz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_xnmBk6": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "test_review_app_local_star_rating_NNnWfn"
+        "heading_4haCWY",
+        "text_NERJaz",
+        "button_xnmBk6"
       ],
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "include_margins": true
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "image_banner",
+    "rich_text_PMNzh3",
     "featured_collection",
     "17193202967a5af0d8"
   ]
