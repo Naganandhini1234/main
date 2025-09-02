@@ -78,18 +78,6 @@
     },
     "17193202967a5af0d8": {
       "type": "apps",
-      "blocks": {
-        "test_review_app_local_star_rating_NNnWfn": {
-          "type": "shopify://apps/test-review-app-local/blocks/star_rating/8303e22e-8735-42d9-9e59-bcbeed5038f7",
-          "settings": {
-            "product": "",
-            "colour": "#18b1ff"
-          }
-        }
-      },
-      "block_order": [
-        "test_review_app_local_star_rating_NNnWfn"
-      ],
       "settings": {
         "include_margins": true
       }
