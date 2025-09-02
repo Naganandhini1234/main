@@ -96,8 +96,8 @@
     }
   },
   "order": [
-    "featured_collection",
     "image_banner",
+    "featured_collection",
     "17193202967a5af0d8"
   ]
 }
