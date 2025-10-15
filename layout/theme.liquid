@@ -1,5 +1,10 @@
 ------
 Metaobjects Color:
+{% assign entry = all_metaobjects['shopify--color-pattern']["black"] %}
+
+{{ entry.field_name }}
+
+-----
 {% assign swatch_color = all_metaobjects['shopify--color-pattern']['black'] %}
 {{ swatch_color.value | json }}
 -----
