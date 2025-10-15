@@ -575,7 +575,17 @@
 
                               {%- capture text_value -%}
                                 <span class="facet-checkbox__text" aria-hidden="true">
-                                  <span class="facet-checkbox__text-label">{{- value.label | escape }}</span> ({{- value.count -}})
+                                 <span
+                            class="color-swatch color-swatch--filters color-swatch--{{ value.label | handle }}"
+                            title="{{ value.label }}"
+                            style="{% if swatch_color != blank %}
+                              background-color: {{ value.value }};
+                            {% else %}
+                              background-color: {{ value.label }};
+                            {% endif %}"
+                        >
+                            {{ value.label }}
+                        </span>
                                 </span>
                                 <span class="visually-hidden">
                                   {{- value.label | escape }} (
