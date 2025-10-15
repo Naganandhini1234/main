@@ -595,7 +595,26 @@
 
                               {%- capture text_value -%}
                                 <span class="facet-checkbox__text" aria-hidden="true">
-                             
+                                            {% for filter in collection.filters %}
+    {% for value in filter.values %}
+      <label class="facet-checkbox">
+        <input
+          type="checkbox"
+          name="{{ value.param_name }}"
+          value="{{ value.value }}"
+          {% if value.active %}checked{% endif %}
+        >
+        <span class="facet-checkbox__text" aria-hidden="true">
+          <span class="facet-checkbox__text-label">{{ value.label | escape }}</span>
+          ({{ value.count }})
+        </span>
+
+        <!-- Debug -->
+        <pre>{{ value | json }}</pre>
+
+      </label>
+    {% endfor %}
+{% endfor %}
 
                                   <span class="facet-checkbox__text-label">{{- value.label | escape }}</span> ({{- value.count -}})
                                 </span>
