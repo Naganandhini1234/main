@@ -560,6 +560,8 @@
                                 assign sorted_values = active_filter_values | concat: inactive_filter_values
                               endif
                             -%}
+                            {{ active_filter_values }}
+                            {{ inactive_filter_values }}
                             {%- for value in sorted_values -%}
                               {% liquid
                                 assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-mobile-' | append: forloop.index
