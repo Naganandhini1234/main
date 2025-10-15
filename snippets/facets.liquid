@@ -232,9 +232,17 @@
             <span class="facet-swatch"
               style="background-color: {{ color_code }};"
               title="{{ color_name }}">
-              {% assign color_obj = value.value | metaobject %}
-<p>{{ color_obj.name }}</p>
-{{ color_obj.color.value }}
+              {% assign color_pattern = value.value | metaobject %}
+
+              {% if color_pattern %}
+                {% assign color_name = color_pattern.label %}
+                {% assign color_code = color_pattern.color.value %}
+                <span class="facet-color-swatch" style="background-color: {{ color_code }};"></span>
+                <span>{{ color_name }}</span>
+              {% else %}
+                {{ value.label }}
+              {% endif %}
+
             </span>
             <span>{{ color_name }}</span> ({{ value.count }})
           </label>
