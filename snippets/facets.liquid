@@ -209,7 +209,7 @@
                                 <span
                             class="color-swatch color-swatch--filters color-swatch--{{ value.label | handle }}"
                             title="{{ value.label }}"
-                            style="{% if swatch_color != blank %}
+                            style="{% if value.value  %}
                               background-color: {{ value.value }};
                             {% else %}
                               background-color: {{ value.label }};
