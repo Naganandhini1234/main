@@ -206,26 +206,41 @@
 
                             {%- capture text_value -%}
                               <span class="facet-checkbox__text" aria-hidden="true">
-                                     {% for filter in collection.filters %}
-    {% for value in filter.values %}
-      <label class="facet-checkbox">
-        <input
-          type="checkbox"
-          name="{{ value.param_name }}"
-          value="{{ value.value }}"
-          {% if value.active %}checked{% endif %}
-        >
-        <span class="facet-checkbox__text" aria-hidden="true">
-          <span class="facet-checkbox__text-label">{{ value.label | escape }}</span>
-          ({{ value.count }})
-        </span>
+                                  {% for filter in collection.filters %}
+  {% if filter.label == "Color" %}
+    <ul class="color-filter-list">
+      {% for value in filter.values %}
+        {% assign color_ref = value.value %}
+        {% assign color_obj = color_ref | metaobject %}
 
-        <!-- Debug -->
-        <pre>{{ value | json }}</pre>
+        {% if color_obj != blank %}
+          {% assign color_name = color_obj.name %}
+          {% assign color_code = color_obj.color.value %}
+        {% else %}
+          {% assign color_name = value.label %}
+          {% assign color_code = '#ccc' %}
+        {% endif %}
 
-      </label>
-    {% endfor %}
+        <li>
+          <label class="facet-checkbox">
+            <input
+              type="checkbox"
+              name="{{ value.param_name }}"
+              value="{{ value.value }}"
+              {% if value.active %}checked{% endif %}
+            >
+            <span class="facet-swatch"
+              style="background-color: {{ color_code }};"
+              title="{{ color_name }}">
+            </span>
+            <span>{{ color_name }}</span> ({{ value.count }})
+          </label>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 {% endfor %}
+
                                 <span class="facet-checkbox__text-label">{{- value.label | escape }}</span> ({{- value.count -}})
                               </span>
                               <span class="visually-hidden">
