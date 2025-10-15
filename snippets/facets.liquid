@@ -189,7 +189,8 @@
                           endif
                         -%}
                         <p>{{ active_filter_values }},
-                        {{ inactive_filter_values }}</p>
+                        {{ inactive_filter_values }},
+                      {{ sorted_values }}</p>
                         <p>test</p>
                         <ul
                           class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
@@ -211,6 +212,7 @@
                               <span class="facet-checkbox__text" aria-hidden="true">
                                 <span class="facet-checkbox__text-label">{{- value.label | escape }}</span> ({{- value.count -}})
                               </span>
+                              {{ value | json }}
                               <span class="visually-hidden">
                                 {{- value.label | escape }} (
                                 {%- if value.count == 1 -%}
