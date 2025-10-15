@@ -576,7 +576,6 @@
                               {%- capture text_value -%}
                                 <span class="facet-checkbox__text" aria-hidden="true">
                                   {% for filter in collection.filters %}
-  {% if filter.label == "Color" %}
     {% for value in filter.values %}
       <label class="facet-checkbox">
         <input
@@ -595,7 +594,6 @@
 
       </label>
     {% endfor %}
-  {% endif %}
 {% endfor %}
 
                                   <span class="facet-checkbox__text-label">{{- value.label | escape }}</span> ({{- value.count -}})
