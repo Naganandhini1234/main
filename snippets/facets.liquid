@@ -190,7 +190,7 @@
                         -%}
                         <p>{{ active_filter_values }},
                         {{ inactive_filter_values }},
-                      {{ sorted_values }}</p>
+                      {{ sorted_values | json }}</p>
                         <p>test</p>
                         <ul
                           class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
