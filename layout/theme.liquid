@@ -1,7 +1,7 @@
 ------
 Metaobjects Color:
 {% assign swatch_color = shop.metaobjects['shopify--color-pattern']['black'] %}
-{{ swatch_color }}
+{{ swatch_color.value | json }}
 -----
 
 test{% comment %} {% assign product_data = all_products[8436331675877] %}
