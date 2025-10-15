@@ -188,6 +188,8 @@
                             assign sorted_values = active_filter_values | concat: inactive_filter_values
                           endif
                         -%}
+                        {{ active_filter_values }}
+                        {{ inactive_filter_values }}
                         <ul
                           class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
                           role="list"
