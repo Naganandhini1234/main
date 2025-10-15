@@ -232,6 +232,9 @@
             <span class="facet-swatch"
               style="background-color: {{ color_code }};"
               title="{{ color_name }}">
+              {% assign color_obj = value.value | metaobject %}
+{{ color_obj.name }}
+{{ color_obj.color.value }}
             </span>
             <span>{{ color_name }}</span> ({{ value.count }})
           </label>
