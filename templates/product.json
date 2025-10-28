@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -14,10 +23,6 @@
           "type": "title",
           "settings": {}
         },
-        "callback_check_1_average_ratings_ADrTdF": {
-          "type": "shopify:\/\/apps\/callback-check-1\/blocks\/average_ratings\/ce380155-2460-4251-a006-b75a4bd58723",
-          "settings": {}
-        },
         "price": {
           "type": "price",
           "settings": {}
@@ -25,12 +30,24 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
+            "picker_type": "button",
+            "swatch_shape": "circle"
           }
         },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
+        },
+        "cally_booking_button_eEdDWk": {
+          "type": "shopify://apps/cally/blocks/booking-button/8315b415-30db-4e56-830b-30d1c7c6b833",
+          "settings": {
+            "product": "{{product}}",
+            "show_duration": true,
+            "show_preview": true,
+            "button_label": "book",
+            "is_full_screen": false,
+            "load_all_products": false
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -53,10 +70,10 @@
       "block_order": [
         "vendor",
         "title",
-        "callback_check_1_average_ratings_ADrTdF",
         "price",
         "variant_picker",
         "quantity_selector",
+        "cally_booking_button_eEdDWk",
         "buy_buttons",
         "description",
         "share"
@@ -97,20 +114,6 @@
     },
     "171808696669b48b40": {
       "type": "apps",
-      "blocks": {
-        "custom_app_star_rating_JgpQkH": {
-          "type": "shopify:\/\/apps\/custom-app\/blocks\/star_rating\/783d9859-d2b3-4566-9f73-b9e367870528",
-          "settings": {
-            "heading": "",
-            "colour": "#ff0000",
-            "padding_top": 36,
-            "padding_bottom": 36
-          }
-        }
-      },
-      "block_order": [
-        "custom_app_star_rating_JgpQkH"
-      ],
       "disabled": true,
       "settings": {
         "include_margins": true
@@ -125,38 +128,12 @@
     },
     "17210511036a095477": {
       "type": "apps",
-      "blocks": {
-        "callback_check_1_star_rating_aT9QiY": {
-          "type": "shopify:\/\/apps\/callback-check-1\/blocks\/star_rating\/ce380155-2460-4251-a006-b75a4bd58723",
-          "settings": {
-            "padding_top": 36,
-            "padding_bottom": 36,
-            "reviews_limit": 3,
-            "section_background_color": "#ffffff",
-            "review_background_color": "#ffffff",
-            "star_color1": "#000000",
-            "star_color2": "#000000"
-          }
-        }
-      },
-      "block_order": [
-        "callback_check_1_star_rating_aT9QiY"
-      ],
       "settings": {
         "include_margins": true
       }
     },
     "17232173607704ecaa": {
       "type": "apps",
-      "blocks": {
-        "rebolt_bundle_products_addon_product_MMWAHm": {
-          "type": "shopify:\/\/apps\/rebolt-bundle-products\/blocks\/addon-product\/0a9e67ff-0413-4374-921d-e70fb17c7dbc",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "rebolt_bundle_products_addon_product_MMWAHm"
-      ],
       "settings": {
         "include_margins": true
       }
