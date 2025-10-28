@@ -158,6 +158,46 @@
         "type": "shopify://apps/apntly-appointment-booking-app/blocks/main-app-embed/17a520a2-4844-483a-826a-11cb5dd0370d",
         "disabled": false,
         "settings": {}
+      },
+      "18384125943788576634": {
+        "type": "shopify://apps/meety-appointment-booking/blocks/bookings-v2/47f38863-0648-44e3-873d-c84301243dcb",
+        "disabled": false,
+        "settings": {
+          "use_add_to_cart_style": false,
+          "horizontal_alignment": "center",
+          "font_family": "poppins_n4",
+          "font_size": 14,
+          "schedule_text": "Schedule your time",
+          "schedule_text_color": "#fffffd",
+          "schedule_background_color": "#000001",
+          "bundle_button_type": "1",
+          "bundle_text": "Schedule your bundle",
+          "bundle_book_text": "Book a new bundle",
+          "bundle_manage_text": "Manage your booked bundle",
+          "bundle_text_color": "#fffffd",
+          "bundle_background_color": "#000001",
+          "css_customization": "--meety-block-button-border-radius: 10px;\n--meety-block-button-width: 100%;\n--meety-block-button-height: 48px;\n--meety-block-button-margin: 0px 0px 0px 0px;\n--meety-block-button-schedule-border-color:#000001;\n--meety-block-button-schedule-border-width: 0px;\n--meety-block-button-subs-book-border-color:#000001;\n--meety-block-button-subs-book-border-width: 0px;"
+        }
+      },
+      "11793083337665231478": {
+        "type": "shopify://apps/meety-appointment-booking/blocks/meety-button-floating/47f38863-0648-44e3-873d-c84301243dcb",
+        "disabled": false,
+        "settings": {
+          "widget_url_handle": "",
+          "product": "",
+          "text": "Schedule your time",
+          "text_color": "#fffffd",
+          "background_color": "#000001",
+          "position": "right",
+          "width": "fit-content",
+          "height": "fit-content",
+          "border_width": 0,
+          "border_radius": 10,
+          "border_color": "#000001",
+          "font_family": "poppins_n4",
+          "font_size": 14,
+          "hide_on_scroll_down": false
+        }
       }
     },
     "color_schemes": {
