@@ -48,6 +48,85 @@
         "show_text_below": false
       }
     },
+    "176285384443f0c381": {
+      "type": "apps",
+      "blocks": {
+        "hulk_form_builder_form_block_wFwCJ3": {
+          "type": "shopify://apps/hulk-form-builder/blocks/form-block/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+          "settings": {
+            "form_uuid": "jvUEBG9QbLnRe3eWqQ0jGA",
+            "form_settings": false,
+            "font_color": "#000000",
+            "size": 14,
+            "input_background_color": "#FFF",
+            "input_background_color_focus": "#F4DADA",
+            "input_border_radius": 1,
+            "input_border_color": "#ebe9e9",
+            "input_border_color_focus": "#2D2727",
+            "input_font_color": "#3D3131",
+            "input_size": 14,
+            "border_color": "#121212",
+            "border_radius": 2,
+            "border": 1,
+            "fill_color": "#EBE9E9",
+            "padding": 35,
+            "form_width": 600,
+            "btn_text": "Submit",
+            "sub_btn_txt_color": "#F3F3F3",
+            "sub_btn_bg_color": "#3F3333",
+            "sub_btn_font_size": 14,
+            "sub_btn_bdr_color": "#FFFFFF",
+            "sub_btn_bdr_rad": 3,
+            "sub_btn_bdr_width": 1,
+            "fonts": "Times New Roman"
+          }
+        }
+      },
+      "block_order": [
+        "hulk_form_builder_form_block_wFwCJ3"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "collage_qMXcc7": {
+      "type": "collage",
+      "blocks": {
+        "image_r7VTrm": {
+          "type": "image",
+          "settings": {}
+        },
+        "product_ikRtez": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "second_image": false
+          }
+        },
+        "collection_GAFADk": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_r7VTrm",
+        "product_ikRtez",
+        "collection_GAFADk"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "Multimedia collage",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "rich_text_PMNzh3": {
       "type": "rich-text",
       "blocks": {
@@ -124,48 +203,11 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "collage_qMXcc7": {
-      "type": "collage",
-      "blocks": {
-        "image_r7VTrm": {
-          "type": "image",
-          "settings": {}
-        },
-        "product_ikRtez": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection_GAFADk": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_r7VTrm",
-        "product_ikRtez",
-        "collection_GAFADk"
-      ],
-      "name": "t:sections.collage.presets.name",
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h1",
-        "desktop_layout": "left",
-        "mobile_layout": "column",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "image_banner",
+    "176285384443f0c381",
     "collage_qMXcc7",
     "rich_text_PMNzh3",
     "featured_collection",
