@@ -144,11 +144,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "16881471024131275657": {
-        "type": "shopify://apps/searchanise-search-filter/blocks/app-embed/d8f24ada-02b1-458a-bbeb-5bf16d5c921e",
-        "disabled": false,
-        "settings": {}
-      },
       "18384125943788576634": {
         "type": "shopify://apps/meety-appointment-booking/blocks/bookings-v2/47f38863-0648-44e3-873d-c84301243dcb",
         "disabled": true,
@@ -212,6 +207,16 @@
       "319724205969189013": {
         "type": "shopify://apps/hulk-form-builder/blocks/app-embed/b6b8dd14-356b-4725-a4ed-77232212b3c3",
         "disabled": true,
+        "settings": {}
+      },
+      "16881471024131275657": {
+        "type": "shopify://apps/searchanise-search-filter/blocks/app-embed/d8f24ada-02b1-458a-bbeb-5bf16d5c921e",
+        "disabled": true,
+        "settings": {}
+      },
+      "7584948915495707528": {
+        "type": "shopify://apps/joy-loyalty-program/blocks/app-embed/555c55c9-9a3d-4fe0-a7a8-2c256984a371",
+        "disabled": false,
         "settings": {}
       }
     },
