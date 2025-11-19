@@ -132,25 +132,6 @@
         "include_margins": true
       }
     },
-    "1718793002262a950e": {
-      "type": "apps",
-      "disabled": true,
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "17210511036a095477": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "17232173607704ecaa": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
     "17635482627542f752": {
       "type": "apps",
       "blocks": {
@@ -171,9 +152,6 @@
     "main",
     "related-products",
     "171808696669b48b40",
-    "1718793002262a950e",
-    "17210511036a095477",
-    "17232173607704ecaa",
     "17635482627542f752"
   ]
 }
