@@ -218,6 +218,11 @@
         "type": "shopify://apps/joy-loyalty-program/blocks/app-embed/555c55c9-9a3d-4fe0-a7a8-2c256984a371",
         "disabled": false,
         "settings": {}
+      },
+      "10115289292966514107": {
+        "type": "shopify://apps/wiser-ai-upsell-cross-sell/blocks/wiser-block/3f966edc-9a4a-465c-a4df-436d2a39160d",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
