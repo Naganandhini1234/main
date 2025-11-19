@@ -60,6 +60,10 @@
           "type": "description",
           "settings": {}
         },
+        "wiser_ai_upsell_cross_sell_wiser_related_hjNa4w": {
+          "type": "shopify://apps/wiser-ai-upsell-cross-sell/blocks/wiser_related/3f966edc-9a4a-465c-a4df-436d2a39160d",
+          "settings": {}
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -76,6 +80,7 @@
         "cally_booking_button_eEdDWk",
         "buy_buttons",
         "description",
+        "wiser_ai_upsell_cross_sell_wiser_related_hjNa4w",
         "share"
       ],
       "settings": {
