@@ -114,7 +114,15 @@
     },
     "171808696669b48b40": {
       "type": "apps",
-      "disabled": true,
+      "blocks": {
+        "wiser_ai_upsell_cross_sell_wiser_related_A4QNDL": {
+          "type": "shopify://apps/wiser-ai-upsell-cross-sell/blocks/wiser_related/3f966edc-9a4a-465c-a4df-436d2a39160d",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "wiser_ai_upsell_cross_sell_wiser_related_A4QNDL"
+      ],
       "settings": {
         "include_margins": true
       }
@@ -137,6 +145,21 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "17635482627542f752": {
+      "type": "apps",
+      "blocks": {
+        "wiser_ai_upsell_cross_sell_wiser_recommended_8xeEWE": {
+          "type": "shopify://apps/wiser-ai-upsell-cross-sell/blocks/wiser_recommended/3f966edc-9a4a-465c-a4df-436d2a39160d",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "wiser_ai_upsell_cross_sell_wiser_recommended_8xeEWE"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -145,6 +168,7 @@
     "171808696669b48b40",
     "1718793002262a950e",
     "17210511036a095477",
-    "17232173607704ecaa"
+    "17232173607704ecaa",
+    "17635482627542f752"
   ]
 }
