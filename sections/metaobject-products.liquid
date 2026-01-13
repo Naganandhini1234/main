@@ -1,4 +1,4 @@
-{% comment %}
+{% comment %} {% comment %}
   Section: Metaobject Product Listing
 {% endcomment %}
 
@@ -70,6 +70,76 @@
   "presets": [
     {
       "name": "Metaobject Products"
+    }
+  ]
+}
+{% endschema %} {% endcomment %}
+
+
+{% comment %}
+  Section: Metaobject Product Sets
+{% endcomment %}
+
+{% assign product_sets = shop.metaobjects.product_set.values %}
+
+{% if product_sets.size > 0 %}
+  <section class="product-sets">
+
+    {% for set in product_sets %}
+      <div class="product-set">
+
+        {% if set.set_name != blank %}
+          <h2 class="product-set-title">
+            {{ set.set_name }}
+          </h2>
+        {% endif %}
+
+        {% if set.product != blank %}
+          <div class="product-set-grid">
+
+            {% for product in set.product %}
+              <div class="product-card">
+
+                <a href="{{ product.url }}">
+                  {% if product.featured_image %}
+                    <img
+                      src="{{ product.featured_image | image_url: width: 400 }}"
+                      alt="{{ product.title }}"
+                      loading="lazy"
+                    >
+                  {% endif %}
+                </a>
+
+                <h3 class="product-title">
+                  <a href="{{ product.url }}">
+                    {{ product.title }}
+                  </a>
+                </h3>
+
+                <p class="product-price">
+                  {{ product.price | money }}
+                </p>
+
+              </div>
+            {% endfor %}
+
+          </div>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+
+  </section>
+{% else %}
+  <p>No product sets found.</p>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Metaobject Product Sets",
+  "presets": [
+    {
+      "name": "Product Sets (Metaobject)"
     }
   ]
 }
