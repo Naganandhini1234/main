@@ -45,7 +45,7 @@
           "type": "ai_gen_block_de05656",
           "settings": {
             "metaobject_type": "product_set_1",
-            "metaobject_list_reference": "product",
+            "metaobject_list_reference": "Product",
             "products_field_key": "product",
             "heading": "Featured collections",
             "text_alignment": "center",
