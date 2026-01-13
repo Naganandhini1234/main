@@ -83,7 +83,7 @@
       "type": "metaobject-products",
       "name": "Metaobject Products",
       "settings": {
-        "metaobject_ref": ""
+        "metaobject_ref": "set-1"
       }
     }
   },
