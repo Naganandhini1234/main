@@ -97,7 +97,7 @@
         {% if set.product != blank %}
         {% assign product_list = set.product %}
           <div class="product-set-grid">
-{{ product_list.title | json }}
+{{ product_list.data | json }}
             {% for product1 in product_list %}
               <div class="product-card">
 
