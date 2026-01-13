@@ -78,10 +78,18 @@
         "ai_gen_block_de05656_VhbzRB"
       ],
       "settings": {}
+    },
+    "metaobject_products_hiWAAE": {
+      "type": "metaobject-products",
+      "name": "Metaobject Products",
+      "settings": {
+        "metaobject_ref": ""
+      }
     }
   },
   "order": [
     "featured_collection_PYM4Ep",
-    "1768319490a9d3144f"
+    "1768319490a9d3144f",
+    "metaobject_products_hiWAAE"
   ]
 }
