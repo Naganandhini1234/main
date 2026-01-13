@@ -95,10 +95,9 @@
         {% endif %}
 
         {% if set.product != blank %}
-        {% assign product_list = set.product %}
           <div class="product-set-grid">
-{% comment %} {{ product_list | json }} {% endcomment %}
-            {% for product1 in product_list %}
+
+            {% for product in set.product %}
               <div class="product-card">
 
                 <a href="{{ product.url }}">
