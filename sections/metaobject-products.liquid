@@ -1,0 +1,76 @@
+{% comment %}
+  Section: Metaobject Product Listing
+{% endcomment %}
+
+{% if section.settings.metaobject_ref != blank %}
+  {% assign metaobject = section.settings.metaobject_ref.value %}
+
+  <section class="metaobject-products">
+    
+    {% if metaobject != blank %}
+      <div class="metaobject-entry">
+
+        {% if metaobject.name != blank %}
+          <h2 class="metaobject-title">
+            {{ metaobject.name }}
+          </h2>
+        {% endif %}
+
+        {% if metaobject.products != blank %}
+          <div class="metaobject-products-grid">
+            
+            {% for product in metaobject.products %}
+              <div class="metaobject-product-card">
+                
+                <a href="{{ product.url }}">
+                  {% if product.featured_image %}
+                    <img
+                      src="{{ product.featured_image | image_url: width: 400 }}"
+                      alt="{{ product.title }}"
+                      loading="lazy"
+                    >
+                  {% endif %}
+                </a>
+
+                <h3 class="product-title">
+                  <a href="{{ product.url }}">
+                    {{ product.title }}
+                  </a>
+                </h3>
+
+                <p class="product-price">
+                  {{ product.price | money }}
+                </p>
+
+              </div>
+            {% endfor %}
+
+          </div>
+        {% else %}
+          <p>No products assigned.</p>
+        {% endif %}
+
+      </div>
+    {% endif %}
+
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Metaobject Product",
+  "settings": [
+    {
+      "type": "metaobject",
+      "id": "metaobject_ref",
+      "label": "Select Metaobject",
+      "metaobject_type": "collection_group"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Metaobject Products"
+    }
+  ]
+}
+{% endschema %}
