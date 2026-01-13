@@ -1,6 +1,512 @@
+{% doc %}
+  @prompt
+    Add a section to select a metafield, loop over all entries of the metalobject. The entry has list of products, need to entry name, and display the products with the details.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-metaobject-list-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-metaobject-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-metaobject-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    text-align: {{ block.settings.text_alignment }};
+    margin: 0 0 40px;
+  }
+
+  .ai-metaobject-entries-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.entry_spacing }}px;
+  }
+
+  .ai-metaobject-entry-{{ ai_gen_id }} {
+    background-color: {{ block.settings.entry_background_color }};
+    border-radius: {{ block.settings.entry_border_radius }}px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-metaobject-entry-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.entry_name_size }}px;
+    color: {{ block.settings.entry_name_color }};
+    margin: 0 0 20px;
+    font-weight: 600;
+  }
+
+  .ai-metaobject-products-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.products_per_row }}, 1fr);
+    gap: {{ block.settings.product_spacing }}px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-metaobject-products-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.products_per_row_tablet }}, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-metaobject-products-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.products_per_row_mobile }}, 1fr);
+    }
+  }
+
+  .ai-metaobject-product-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.product_card_background }};
+    border-radius: {{ block.settings.product_card_radius }}px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    display: block;
+  }
+
+  .ai-metaobject-product-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+  }
+
+  .ai-metaobject-product-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-metaobject-product-image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-metaobject-product-image-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-metaobject-product-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-metaobject-product-info-{{ ai_gen_id }} {
+    padding: 15px;
+  }
+
+  .ai-metaobject-product-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_title_size }}px;
+    color: {{ block.settings.product_title_color }};
+    margin: 0 0 8px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .ai-metaobject-product-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_price_size }}px;
+    color: {{ block.settings.product_price_color }};
+    font-weight: 600;
+  }
+
+  .ai-metaobject-product-vendor-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  .ai-metaobject-empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+  }
+
+  .ai-metaobject-empty-state-{{ ai_gen_id }} h3 {
+    font-size: 20px;
+    margin: 0 0 10px;
+  }
+
+  .ai-metaobject-empty-state-{{ ai_gen_id }} p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .ai-metaobject-no-products-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-style: italic;
+  }
+{% endstyle %}
+
+<metaobject-list-{{ ai_gen_id }} class="ai-metaobject-list-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-metaobject-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-metaobject-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    {% if block.settings.metaobject_list_reference != blank %}
+      {% assign metaobject_list = shop.metaobjects[block.settings.metaobject_list_reference] %}
+      
+      {% if metaobject_list %}
+        <div class="ai-metaobject-entries-{{ ai_gen_id }}">
+          {% for entry_handle in metaobject_list %}
+            {% assign entry = shop.metaobjects[block.settings.metaobject_type][entry_handle] %}
+            
+            {% if entry %}
+              <div class="ai-metaobject-entry-{{ ai_gen_id }}">
+                {% if entry.name %}
+                  <h3 class="ai-metaobject-entry-name-{{ ai_gen_id }}">{{ entry.name }}</h3>
+                {% elsif entry.title %}
+                  <h3 class="ai-metaobject-entry-name-{{ ai_gen_id }}">{{ entry.title }}</h3>
+                {% endif %}
+
+                {% assign products_field = entry[block.settings.products_field_key] %}
+                
+                {% if products_field != blank and products_field.value != blank %}
+                  <div class="ai-metaobject-products-grid-{{ ai_gen_id }}">
+                    {% for product in products_field.value %}
+                      <a href="{{ product.url }}" class="ai-metaobject-product-card-{{ ai_gen_id }}">
+                        <div class="ai-metaobject-product-image-wrapper-{{ ai_gen_id }}">
+                          {% if product.featured_image %}
+                            <img
+                              src="{{ product.featured_image | image_url: width: 600 }}"
+                              alt="{{ product.featured_image.alt | escape }}"
+                              class="ai-metaobject-product-image-{{ ai_gen_id }}"
+                              loading="lazy"
+                              width="600"
+                              height="600"
+                            >
+                          {% else %}
+                            <div class="ai-metaobject-product-image-placeholder-{{ ai_gen_id }}">
+                              {{ 'product-1' | placeholder_svg_tag }}
+                            </div>
+                          {% endif %}
+                        </div>
+                        <div class="ai-metaobject-product-info-{{ ai_gen_id }}">
+                          {% if block.settings.show_vendor and product.vendor != blank %}
+                            <div class="ai-metaobject-product-vendor-{{ ai_gen_id }}">{{ product.vendor }}</div>
+                          {% endif %}
+                          <h4 class="ai-metaobject-product-title-{{ ai_gen_id }}">{{ product.title }}</h4>
+                          {% if block.settings.show_price %}
+                            <div class="ai-metaobject-product-price-{{ ai_gen_id }}">
+                              {{ product.price | money }}
+                            </div>
+                          {% endif %}
+                        </div>
+                      </a>
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  <div class="ai-metaobject-no-products-{{ ai_gen_id }}">
+                    No products found for this entry
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% else %}
+      <div class="ai-metaobject-empty-state-{{ ai_gen_id }}">
+        <h3>No metaobject selected</h3>
+        <p>Configure the metaobject settings to display entries and products</p>
+      </div>
+    {% endif %}
+  </div>
+</metaobject-list-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class MetaobjectList{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.style.display = 'block';
+      }
+    }
+
+    customElements.define('metaobject-list-{{ ai_gen_id }}', MetaobjectList{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Metaobject product list",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Metaobject settings"
+    },
+    {
+      "type": "text",
+      "id": "metaobject_type",
+      "label": "Metaobject type",
+      "info": "Enter the metaobject type (e.g., product_collections)"
+    },
+    {
+      "type": "text",
+      "id": "metaobject_list_reference",
+      "label": "Metaobject list reference",
+      "info": "Enter the metaobject list reference key"
+    },
+    {
+      "type": "text",
+      "id": "products_field_key",
+      "label": "Products field key",
+      "default": "products",
+      "info": "Enter the field key that contains the product list in your metaobject"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured collections"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show product vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show product price",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 600,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "label": "Container width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "entry_spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Entry spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Products per row (desktop)",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "products_per_row_tablet",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Products per row (tablet)",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "products_per_row_mobile",
+      "label": "Products per row (mobile)",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "product_spacing",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Product spacing",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "entry_background_color",
+      "label": "Entry background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "entry_name_color",
+      "label": "Entry name",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "product_card_background",
+      "label": "Product card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "product_title_color",
+      "label": "Product title",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "product_price_color",
+      "label": "Product price",
+      "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "entry_name_size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Entry name size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "product_title_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Product title size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "product_price_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Product price size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "entry_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Entry border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "product_card_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Product card radius",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Metaobject product list"
+    }
+  ]
+}
 {% endschema %}
