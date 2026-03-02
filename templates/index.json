@@ -244,6 +244,29 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "17724317568f73109f": {
+      "type": "apps",
+      "blocks": {
+        "rapid_hotel_booking_system_star_rating_F993N7": {
+          "type": "shopify://apps/rapid-hotel-booking-system/blocks/star_rating/87745f98-5aee-4da2-8f0c-ecd4a19f7c24",
+          "settings": {
+            "product": "",
+            "colour": "#ff0000"
+          }
+        },
+        "rapid_hotel_booking_system_room_booking_ERPczf": {
+          "type": "shopify://apps/rapid-hotel-booking-system/blocks/room-booking/87745f98-5aee-4da2-8f0c-ecd4a19f7c24",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "rapid_hotel_booking_system_star_rating_F993N7",
+        "rapid_hotel_booking_system_room_booking_ERPczf"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -254,6 +277,7 @@
     "featured_collection",
     "17193202967a5af0d8",
     "video_zrMtcx",
-    "1770964499dac14c80"
+    "1770964499dac14c80",
+    "17724317568f73109f"
   ]
 }
