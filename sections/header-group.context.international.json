@@ -12,5 +12,19 @@
     "market": "international"
   },
   "parent": "header-group.json",
-  "sections": {}
+  "sections": {
+    "metaobject_products_BtEGp": {
+      "type": "metaobject-products",
+      "disabled": false,
+      "settings": {},
+      "blocks": {},
+      "block_order": [],
+      "name": "Product Sets (Metaobject)"
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "metaobject_products_BtEGp",
+    "header"
+  ]
 }
