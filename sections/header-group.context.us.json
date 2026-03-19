@@ -12,5 +12,42 @@
     "market": "us"
   },
   "parent": "header-group.json",
-  "sections": {}
+  "sections": {
+    "announcement_bar_LenAH": {
+      "type": "announcement-bar",
+      "disabled": false,
+      "settings": {
+        "color_scheme": "",
+        "show_line_separator": true,
+        "header-2e3610d840695e64dd386d09fa00ac24": null,
+        "show_social": false,
+        "header-7d80d74a877dd497fe8dc45be9cf7cdb": null,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "header-cf4258297418f6944673dda96e09f8c3": null,
+        "enable_country_selector": false,
+        "header-04a30c0bcb6abdbe2676be5a190b55e5": null,
+        "enable_language_selector": false
+      },
+      "blocks": {
+        "announcement_eN6bJ": {
+          "type": "announcement",
+          "disabled": false,
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_eN6bJ"
+      ],
+      "name": "t:sections.announcement-bar.presets.name"
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "announcement_bar_LenAH"
+  ]
 }
