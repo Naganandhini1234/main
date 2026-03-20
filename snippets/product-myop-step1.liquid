@@ -1,0 +1,13 @@
+{% if block.settings.enable and product.template_suffix == 'personalizedproductpage' %}
+  <div class="myop-step myop-step-1-only" {{ block.shopify_attributes }}>
+    <div class="myop-scent-row">
+      <button type="button" class="myop-open-modal myop-scent-preview-btn">
+        <span class="myop-scent-label-default">Choose Perfume</span>
+        <div class="myop-scent-preview-box" style="display:none;">
+          <img class="myop-scent-banner-preview" src="" alt="">
+          <span class="myop-scent-name-overlay"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+{% endif %}
