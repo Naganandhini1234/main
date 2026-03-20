@@ -1,0 +1,1296 @@
+   .custom-popup-body .cart_buy_now_buttons .product-form {
+      margin-bottom: 0px;
+    }
+    .custom-popup-body .product-form-wrapper {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    #bik-chat-iframe,
+    #google-merchantwidget-iframe-wrapper {
+      z-index: 2147483646 !important;
+    }
+    #infiniteoptions-container{
+      display:none;
+    }
+    #customEmptyDiv #infiniteoptions-container{
+      display: flex !important;
+      flex-direction: column;
+    }
+    #customEmptyDiv #infiniteoptions-container > div:nth-of-type(1) {
+    order: 2;
+  }
+    #customEmptyDiv #infiniteoptions-container > div:nth-of-type(2) {
+    order: 1;
+  }
+
+    .custom-popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 2147483647;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .custom-popup-overlay.hidden{
+      display: none !important; 
+    }
+
+    .custom-popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      box-sizing: border-box;
+      max-height: 90vh;
+      overflow: auto;
+    }
+
+    .custom-close-button {
+      position: absolute;
+      right: 8px;
+      top: 3px;
+      border: none;
+      background: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .custom-popup-body {
+      display: flex;
+      gap: 15px;
+    }
+
+    #custom-engravingCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .custom-popup-details {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .font-style-picker {
+      margin-bottom: 20px;
+    }
+
+    .font-style-picker p {
+      margin-bottom: 10px;
+      font-weight: 500px;
+      color: #383434;
+    }
+
+    .font-option {
+      width: 73px;
+      height: 65px;
+      margin-right: 10px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+
+    .font-option.selected {
+      border: 1px solid black;
+    }
+
+    .input-group {
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .input-group p {
+      margin-bottom: 5px;
+      font-weight: 500px;
+      color: #383434;
+    }
+
+    .input-text {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .custom-add-to-cart-btn {
+      margin-top: 40px;
+      width: 100%;
+      background: black;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+    }
+    body.no-scroll {
+      overflow: hidden;
+      height: 100vh;
+    }
+    .custom-add-to-cart-btn:hover {
+      background: #333;
+    }
+
+  .myop-hide-error{
+  display:none;
+}
+    /* 🔁 Responsive Breakpoint */
+    @media (max-width: 991px) {
+
+      .custom-popup-content {
+        overflow: auto;
+        max-height: 80vh;
+      }
+
+      .custom-close-button {
+
+        top: 5px;
+          right: 10px;
+      }
+      #customEmptyDiv #infiniteoptions-container{
+        width:300px;
+      }
+    }
+    @media (max-width: 768px) {
+      .input-text,
+      .custom-add-to-cart-btn {
+        font-size: 14px;
+      }
+      .custom-popup-content {
+        overflow: auto;
+        max-height: 80vh;
+      }
+      .custom-popup-body {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 551px) {
+
+      .font-option {
+        width: 70px;
+        height: 65px;
+      }
+      .custom-popup-content {
+        padding-top:20px;
+        max-height: 90%;
+          height: 100%;
+          overflow: scroll;
+          bottom: 0;
+          position: absolute;
+          width: 100%;
+          border-radius: 10px 10px 0 0;
+      }
+      .custom-popup-overlay{
+        top:auto;
+        bottom:0;
+        overflow:hidden;
+      }
+
+      .custom-close-button {
+          top: 10px;
+          right: 15px;
+      }
+      .custom-popup-body{
+        padding-top: 30px;
+      }
+
+    }
+    .custom-font-option-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .custom-font-option-wrapper:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+    .cart_buy_now_buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hide-this-container {
+      display: none !important;
+    }
+    .custom-popup-body .shopify-payment-button__button--unbranded {
+      width: 100%;
+    }
+    .custom-popup-body [aria-labelledby='Font Style-0-0'] > span {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .add-to-cart-disable {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+</style>
+<style>
+    .myop-offer-text{
+    padding-top:10px;}
+    .myop-modal-detail-header{
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between;
+    }
+.myop-widget-container {
+  display: flex;
+  gap: 40px;
+  padding: 20px 48px;
+  align-items: flex-start;
+}
+
+.myop-left {
+  width: 65%;
+  height: 450px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+    gap:75px;
+}
+
+/* STATIC IMAGE (left) */
+.myop-static-image {
+  width: 300px;
+  height: 450px;
+  max-width: 300px;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+
+.myop-main-canvas-pdp {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.myop-right {
+  flex: 1;
+  width: 35%;
+}
+
+/* Heading + price row */
+.myop-heading-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  margin-bottom: 6px;
+}
+.myop-heading-row h2 {
+  margin: 0;
+  line-height: 1;
+  font-size:40px;
+  font-weight:bold;
+  letter-spacing: var(--font-heading-letter-spacing);
+}
+.personalized-titles, .myop-artwork-row, .myop-modal-content{
+    letter-spacing:var(--font-body-letter-spacing);
+}
+
+/* Price element initially hidden; visible when .visible class added */
+.myop-heading-price {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  display: none;
+}
+.myop-heading-price.visible {
+  display: block; 
+}
+
+.myop-step {
+  margin: 0px;
+}
+
+/* Make step-number circles a fixed, identical size */
+.step-number {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  margin-right: 5px;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.myop-scent-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.myop-engraving-input{
+    box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(23, 23, 23, 0.1) 0px 0px 0px 1px;
+    border:none;
+}
+.myop-scent-preview-btn {
+   width: 100%;
+  min-height: 48px;
+  border-radius: 6px;
+  padding: 16px 10px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+  color: #999; /* placeholder color */
+  transition: all 0.2s ease;
+}
+/* Text styling inside */
+.myop-scent-preview-btn .myop-scent-label-default {
+  color: #1E1E1E;       /* placeholder color */
+  font-size: 15px;
+  letter-spacing: var(--font-body-letter-spacing);
+}
+/* image inside button: hidden by default */
+.myop-selected-img {
+  display: none;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+/* After selection: show the image element */
+.myop-scent-preview-btn.has-scent .myop-selected-img {
+  display: block;
+}
+
+
+/* hide default label when scent chosen */
+.myop-scent-preview-btn.has-scent .myop-scent-label-default {
+  display: none;
+}
+
+.myop-scent-preview-btn.has-scent {
+  padding: 0;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+}
+.myop-scent-preview-box {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  border-radius:6px;
+  overflow: hidden;
+}
+.myop-scent-banner-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(55%);
+}
+
+.myop-scent-name-overlay {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 2;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.myop-scent-label-default{
+font-size:16px;
+line-height:16px;
+letter-spacing:var(--font-body-letter-spacing);
+}
+/* Product name below image */
+.myop-scent-name-below {
+  font-size: 16px;
+  text-align: center;
+  display: none;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Step 2 layout – inline engraving + font */
+.myop-artwork-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+.myop-engraving-label {
+  font-size: 18px;
+}
+.myop-engraving-input {
+  width: 100%;
+  padding: 16px 10px;
+  font-size: 16px;
+  border-radius:6px;
+  letter-spacing:var(--font-body-letter-spacing);
+}
+.myop-engraving-input:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 1px #000;
+}
+.myop-font-label {
+  font-size: 18px;
+  margin-top: 4px;
+}
+/* FONT BUTTON ROW */
+.myop-font-options {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* BASE BUTTON */
+.myop-font-option {
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  min-width: 110px;
+  text-align: center;
+  transition: all 0.2s ease;
+  color: #000;
+}
+
+/* ACTIVE (BLACK) */
+.myop-font-option.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+  font-weight: 500;
+}
+
+/* HOVER */
+.myop-font-option:hover {
+  border-color: #000;
+}
+
+/* Modal & accordion styling (updated) */
+
+.myop-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+.myop-modal.is-open {
+  display: block;
+}
+.myop-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.myop-modal-close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.myop-modal-body {
+  display: flex;
+  gap: 20px;
+  height: calc(86vh - 120px);
+
+}
+.myop-modal-list {
+  flex: 1 1 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 140px;
+  gap: 12px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.myop-scent-card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+.myop-scent-card.active {
+  border-color: #000;  
+} 
+.myop-scent-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.myop-scent-card-title {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 6px 8px;
+  font-size: 13px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  text-align:center;
+}
+.myop-modal-detail{
+  flex: 1 1 0;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: #ffff;
+  padding: 16px 14px;
+  font-size: 14px;
+  border:1px solid #f6f4f1;
+  display: none;
+}
+.myop-detail-title {
+  margin-bottom: 8px;
+  font-weight:bold;
+  font-size:24px;
+   text-align: center;
+
+}
+.myop-detail-description {
+  margin-top: 8px;
+}
+.myop-acc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.myop-acc-item {
+  border-top: 1px solid #e5e5e5;
+  padding: 10px 0;
+}
+.myop-acc-item:last-child {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Accordion header layout: icon + label on left, plus on right */
+.myop-acc-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 6px 0;
+  gap: 8px;
+}
+
+/* Tooltip container */
+.myop-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.myop-tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+.myop-tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+.myop-tooltip:hover .myop-tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+.personalized-titles{
+  font-size:18px;
+  vertical-align:middle;
+}
+.notesbody{
+  color:#17171799
+}
+
+* Container inside modal */
+.myop-sillage-image {
+  width: 100%;
+  max-height: calc(100vh - 180px); /* adjust if header/footer differs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image fit behavior */
+.myop-sillage-image img {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 335px;
+  object-fit: contain;   /* KEY */
+  display: block;
+}
+
+
+.myop-detail-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.myop-detail-track {
+  position: relative;
+}
+
+.myop-detail-track .slick-list {
+  overflow: hidden !important;
+}
+.myop-detail-track .slick-prevs,.myop-detail-track .slick-nexts{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999 !important;
+  width: 22px;
+  height: 22px;
+  pointer-events: auto !important;
+  padding:4px;
+  border: 1px solid black;
+  background:#ffff;
+}
+.myop-detail-track .slick-prevs::after,.myop-detail-track .slick-nexts::after{content:unset;}
+.myop-detail-track .slick-prevs{
+    left: 13% !important;
+}
+.myop-detail-track .slick-nexts{
+  right: 13% !important;
+  justify-items: right;
+}
+.myop-detail-track .slick-next {
+  right: 13% !important;
+  justify-items: right;
+}
+.myop-detail-track .slick-slide {
+  position: relative;
+  z-index: 1;
+}
+.myop-detail-content .myop-detail-track .slick-track{
+display:flex;
+}
+.myop-slide h4{
+font-family: 'Outfit'!important;
+}
+.myop-detail-track > .myop-slide {
+    min-width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+.myop-detail-track::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+.myop-detail-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 15px;
+}
+
+.myop-dot {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.myop-dot.active {
+  background: #000;
+}
+
+.myop-hidden{
+display:none;
+}
+
+.myop-modal-footer{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#myop-detail-banner-img{
+  width:100%;
+  height:100%;
+}
+
+.myop-scroll-section {
+    display: flex;
+    min-width: 100%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myop-notes-row {
+  display: flex;
+  gap: 12px;
+}
+.myop-modal-list::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+
+.myop-modal-details{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex:1;
+     border:1px solid #f6f4f1;
+}
+ .myop-modal-cancel, .myop-detail-back{
+    background-color: #E2E2E2 !important;
+    border: #E2E2E2;
+    color: black;
+    padding: 14px 40px;
+    border-radius: 25px;
+    font-size: var(--font-button-size);
+  }
+
+/* ---------------------- Minimal additions to remove gap after image is applied ---------------------- */
+
+.myop-scent-preview-btn.has-scent {
+  padding: 0px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: block;
+}
+
+.myop-scent-preview-btn.has-scent .myop-selected-img,
+.myop-scent-preview-btn.has-scent > .myop-selected-img {
+  display: block !important;
+  width: 40px;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 4px;
+} 
+
+.myop-scent-preview-wrapper .myop-scent-name-below {
+  margin-top: 8px;
+  text-align:left;
+}
+
+.myop-scent-preview-wrapper.has-scent-wrapper {
+  padding: 0;
+}
+.myop-extra-thumb {
+  width: auto;
+  max-width: 100px;
+  height: auto;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+}
+.myop-extra-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Show/hide classes for overview/detail toggle */
+.myop-modal-details.hidden { display: none !important; }
+.myop-modal-detail.visible { display: block !important; }
+
+
+.myop-acc-left{
+display: flex;
+    align-items: center;
+    gap: 8px;}
+.myop-acc-body{
+        padding-top: 10px;
+}
+.myop-modal-content {
+  width: 95%;
+  max-width: 640px;
+  max-height: 90vh;
+  padding: 20px 24px 16px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  height: 90%;
+  justify-content: space-between;
+}
+
+#myop-modal-{{ section.id }} .myop-scent-card-title {
+  font-size: 12px;
+  padding: 6px;
+}
+
+.myop-detail-banner {
+  width: 100%;
+  {% comment %} overflow: hidden; {% endcomment %}
+  margin-bottom: 14px;
+}
+
+.myop-detail-header {
+  text-align: center;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.myop-detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.myop-detail-volume {
+  font-size: 14px;
+  color: #000000;
+  display: block;
+  font-family:'Tenor sans';
+}
+#myop-detail-modal .myop-modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align:center;
+  gap:0px;
+  justify-content: space-between;
+}
+#myop-detail-modal .myop-detail-header {
+  padding-top: 5px;
+}
+#myop-detail-modal .myop-detail-track {
+  margin-top: 12px;
+}
+#myop-detail-modal .myop-modal-footer {
+  padding: 20px 24px 16px;
+}
+
+.myop-notes-row {
+  display: flex;
+  justify-content:center;
+  flex-direction:row;
+  align-items:center;
+  flex-direction:column;
+}
+
+.myop-notes-row img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  max-width:220px;
+}
+
+.myop-full-img {  
+  width: 100%;
+}
+.myop-slide .personality_img{
+max-width:300px;
+}
+.myop-slide .intensity_img{
+max-width:270px;
+}
+
+
+/* DETAIL MODAL LAYOUT FIX */
+.myop-modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.myop-gift-options {
+  display: flex; 
+  flex-direction: row;
+  gap: 14px;
+  margin-top: 24px;
+  margin-bottom:24px;
+}
+
+.myop-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.myop-note-field textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+.myop-trust-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align:center;
+  }
+
+  .myop-trust-grid{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;   
+    align-items: baseline;
+  }
+  .myop-trust-item-content{
+  font-size:14px;
+}
+.myop-modal-second-content{
+  padding:0px !important;
+}
+}
+.myop-buttons .product-form-wrapper{
+margin-top:0px;
+}
+#myop-note-text:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.myop-engraving-input:focus{
+  outline: none !important;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(23, 23, 23, 0.1) 0px 0px 0px 1px;
+}
+.myop-scent-banner-preview{
+display:block !important}
+;
+/* =========================
+   SLICK ARROWS FIX
+========================= */
+.myop-detail-track .slick-prev:before,
+.myop-detail-track .slick-next:before {
+  display: none; /* hide default arrow icon */
+}
+
+/* If using image arrows */
+.myop-detail-track .slick-prev img,
+.myop-detail-track .slick-next img {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+/* =========================
+   SLICK DOTS FIX
+========================= */
+
+.myop-detail-track .slick-dots {
+  bottom: -15px;
+}
+
+.myop-detail-track .slick-dots li button:before {
+  font-size: 10px;
+  color: #999;
+  opacity: 1;
+}
+
+.myop-detail-track .slick-dots li.slick-active button:before {
+  color: #000;
+}
+.slick-dots li{
+margin:0px !important;
+}
+.myop-detail-track {
+  padding-bottom: 15px;
+}
+
+.myop-detail-track .slick-dots {
+  position: absolute;
+  width: 100%;
+}
+
+/* Force slide to center */
+.myop-detail-track .slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: auto !important;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* Remove slick default grey background */
+.slick-slide {
+  background: transparent !important;
+  background-color:white;
+}
+
+.custom-arrow:before { 
+  content: '' !important; 
+}
+ 
+.myop-detail-content .slick-dotted.slick-slider{
+margin-bottom: 0px !important;
+}
+.myop-detail-content .slick-dots li{
+width:14px !important;
+height:14px !important;
+} 
+.myop-detail-track .custom-arrow svg{
+  background: #ffffff;
+  border-radius: 50%;
+}
+.myop-detail-price {
+  font-size: 14px;
+  color: #000;
+  font-family: 'Tenor sans';
+}
+/* ===========================================================
+   =================== RESPONSIVE BREAKPOINTS =================
+   =========================================================== */
+@media screen and (max-width:1024px){
+  #myop-detail-modal .myop-modal-content {
+    justify-content:space-between;
+  }
+  .myop-modal-content {
+    gap:40px;
+  }
+  .myop-modal-body{
+    height: calc(87vh - 120px);
+  }
+}
+
+@media screen and (max-width:991px){
+  .myop-widget-container{
+    flex-direction:column;
+    align-items:center;
+  }
+  .myop-left,
+  .myop-right {
+    width: 100%;
+  }
+  .myop-static-image {
+    display: none !important;
+  }
+  .myop-modal-content{
+    gap:30px;
+  }
+}
+
+@media screen and (max-width:767px){
+ .slick-nexts , .slick-prevs{
+    display:none !important;
+  }
+  .myop-detail-content .myop-detail-track .slick-prev , .myop-detail-content .myop-detail-track .slick-next{
+  display:none !important;
+}
+  .myop-modal-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .myop-left{
+    flex-direction:column;
+    height:auto;
+  }
+
+  .myop-right h2{
+    font-size:24px;
+  }
+
+  .myop-modal-close {
+    z-index: 10;
+    right: 12px;
+    top: 8px;
+  }
+
+  .myop-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    {% comment %} margin-top: 20px; {% endcomment %}
+  }
+
+  .myop-modal-list {
+    width: 100%;
+    overflow-y: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 120px;
+    gap: 10px;
+    padding-right: 6px;
+    box-sizing: border-box;
+  }
+
+  .myop-modal-detail {
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+
+  .myop-modal-footer {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    text-align:center;
+  }
+
+  .myop-modal-footer button {
+    border-radius: 30px;
+    padding: 12px 26px;
+    font-size: 15px;
+  }
+
+  .myop-modal-list::-webkit-scrollbar,
+  .myop-modal-detail::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .myop-modal-list::-webkit-scrollbar-thumb,
+  .myop-modal-detail::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: rgba(0,0,0,0.12);
+  }
+
+  .myop-modal-content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 95% !important;
+    max-height: 90vh !important;
+    gap:40px;
+  }
+  
+ .myop-detail-header {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.myop-detail-header .myop-detail-title,
+.myop-detail-header .myop-detail-volume {
+  flex-shrink: 0;
+}
+.myop-detail-header .myop-detail-price {
+  width: 100%;
+  text-align: center;
+}
+}
+
+@media screen and (max-width:551px){
+  .myop-right h2{
+    font-size:24px;
+  }
+
+  .myop-modal-list {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .myop-notes-row{
+    flex-direction:column !important;
+  }
+
+  .myop-font-option {
+    min-width: 80px;
+  }
+
+
+  .myop-modal-content {
+    max-height: 90vh !important;
+  }
+}
+
+@media screen and (max-width:390px){
+  .myop-modal-content {
+    width: 95% !important;
+    max-height:90vh !important;
+  }
+
+  .myop-notes-row{
+    gap:20px;
+  }
+
+  .myop-detail-banner {
+    margin-bottom: 0px;
+  }
+
+
+  #myop-detail-modal .myop-detail-header {
+    padding-top:10px;
+    margin-bottom:0px;
+  }
+}
+
+@media screen and (max-width:551px){
+  .myop-detail-title , .myop-slide h4{
+  font-size:16px;
+}
+}
+@media screen and (min-width: 767px) {
+  .myop-detail-price::before {
+    content: '- ';
+  }
+}
+@media screen and (max-width: 767px) {
+  .myop-modal-content {
+    width: 90% !important;
+    max-height:80% !important;
+  }
+}
