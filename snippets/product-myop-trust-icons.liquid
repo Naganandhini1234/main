@@ -1,0 +1,44 @@
+{% if block.settings.enable %}
+  <div class="myop-trust-icons" {{ block.shopify_attributes }}>
+    <div class="myop-trust-grid">
+      {% if block.settings.text_1 != blank %}
+        <div class="myop-trust-item">
+          {% if block.settings.icon_1 %}
+            <div class='myop-trust-item-image'>
+              <img src="{{ block.settings.icon_1 | image_url: width: 48 }}" alt="">
+            </div>
+          {% endif %}
+          <div class='myop-trust-item-content'>
+            <p>{{ block.settings.text_1 }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.text_2 != blank %}
+        <div class="myop-trust-item">
+          {% if block.settings.icon_2 %}
+            <div class='myop-trust-item-image'>
+              <img src="{{ block.settings.icon_2 | image_url: width: 48 }}" alt="">
+            </div>
+          {% endif %}
+          <div class='myop-trust-item-content'>
+            <p>{{ block.settings.text_2 }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.text_3 != blank %}
+        <div class="myop-trust-item">
+          {% if block.settings.icon_3 %}
+            <div class='myop-trust-item-image'>
+              <img src="{{ block.settings.icon_3 | image_url: width: 48 }}" alt="">
+            </div>
+          {% endif %}
+          <div class='myop-trust-item-content'>
+            <p>{{ block.settings.text_3 }}</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
