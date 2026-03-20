@@ -1,0 +1,27 @@
+{% if product.template_suffix == 'personalizedproductpage' %}
+  <div class="myop-step myop-gift-options" {{ block.shopify_attributes }}>
+    {% if block.settings.enable_gift_wrap %}
+      <label class="myop-checkbox">
+        <input type="checkbox" id="myop-gift-wrap">
+        <span>Free Gift Wrap</span>
+      </label>
+    {% endif %}
+
+    {% if block.settings.enable_personal_note %}
+      <label class="myop-checkbox">
+        <input type="checkbox" id="myop-personal-note">
+        <span>Personal Note</span>
+      </label>
+    {% endif %}
+  </div>
+
+  <div class="myop-note-field" style="display:none;">
+    <textarea
+      id="myop-note-text"
+      placeholder="My Dear..."
+      maxlength="100"
+    ></textarea>
+  </div>
+
+  <div class="myop-heading-price" aria-hidden="true" data-base-price="—">—</div>
+{% endif %}

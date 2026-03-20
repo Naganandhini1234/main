@@ -1,0 +1,19 @@
+{% if block.settings.enable and product.template_suffix == 'personalizedproductpage' %}
+  <div class="myop-step myop-step-2-only" {{ block.shopify_attributes }}>
+    <div class="myop-artwork-row">
+      <input
+        type="text"
+        id="engravingText-{{ section_id }}"
+        class="myop-engraving-input"
+        maxlength="12"
+        placeholder="{{ block.settings.text_placeholder }}"
+      />
+      <div class="myop-font-label">Choose Font</div>
+      <div class="myop-font-options">
+        <button type="button" class="myop-font-option" data-font-style="Classic">Classic</button>
+        <button type="button" class="myop-font-option" data-font-style="Elegant">Elegant</button>
+        <button type="button" class="myop-font-option" data-font-style="Playful">Playful</button>
+      </div>
+    </div>
+  </div>
+{% endif %}
