@@ -1,4 +1,4 @@
-{% comment %} <!--nv !-->
+<!--nv !-->
 {%- assign myop_block = section.blocks | where: 'type', 'myop_step1' | first -%}
 {%- assign scent_collection = myop_block.settings.scent_collection -%}
 {% assign first_image = product.selected_or_first_available_variant.featured_image | default: product.images.first %}
@@ -205,7 +205,7 @@
     enableScentDetails: {{ section.settings.enable_scent_details | json }},
     firstImageUrl: "{{ first_image | image_url: width: 900 }}"
   };
-</script> {% endcomment %}
+</script>
 
 {% schema %}
 {
