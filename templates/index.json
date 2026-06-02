@@ -227,6 +227,7 @@
           "type": "shopify://apps/whatmore-shoppable-videos/blocks/app-block/20db8a72-315a-4364-8885-64219ee48303",
           "settings": {
             "heading": "Watch and Buy",
+            "widget-identity": "wgt_default",
             "template-type": "template-h",
             "title-font-size": 40,
             "title-font-size-portrait": 24,
@@ -267,6 +268,71 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "17804081624991e1bf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_0ade158_zNtrrG": {
+          "type": "ai_gen_block_0ade158",
+          "settings": {
+            "heading": "What our customers say",
+            "subheading": "Don't just take our word for it",
+            "text_alignment": "center",
+            "section_padding": 50,
+            "desktop_width_percent": 100,
+            "columns_desktop": 3,
+            "columns_tablet": 2,
+            "grid_gap": 20,
+            "background_color": "#ffffff",
+            "heading_color": "#121212",
+            "text_color": "#121212",
+            "card_background": "#f3f3f3",
+            "card_border_color": "#e0e0e0",
+            "star_color": "#ffc107",
+            "star_empty_color": "#e0e0e0",
+            "heading_size": 36,
+            "subheading_size": 16,
+            "review_text_size": 15,
+            "card_padding": 25,
+            "card_border_radius": 8,
+            "card_border_thickness": 1,
+            "card_shadow_opacity": 5,
+            "card_shadow_vertical": 4,
+            "card_shadow_blur": 10,
+            "star_size": 20,
+            "avatar_size": 50,
+            "review_1": "Absolutely love this product! The quality exceeded my expectations and the customer service was outstanding.",
+            "rating_1": 3,
+            "customer_name_1": "Abirami",
+            "customer_title_1": "Verified Buyer",
+            "review_2": "Great experience from start to finish. Fast shipping and the product is exactly as described. Highly recommend!",
+            "rating_2": 5,
+            "customer_name_2": "Michael Chen",
+            "customer_title_2": "Verified Buyer",
+            "review_3": "I've been a customer for years and they never disappoint. Quality products and excellent support every time.",
+            "rating_3": 5,
+            "customer_name_3": "Emily Rodriguez",
+            "customer_title_3": "Verified Buyer",
+            "review_4": "",
+            "rating_4": 5,
+            "customer_name_4": "",
+            "customer_title_4": "",
+            "review_5": "",
+            "rating_5": 5,
+            "customer_name_5": "",
+            "customer_title_5": "",
+            "review_6": "",
+            "rating_6": 4,
+            "customer_name_6": "Abirami",
+            "customer_title_6": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_0ade158_zNtrrG"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -278,6 +344,7 @@
     "17193202967a5af0d8",
     "video_zrMtcx",
     "1770964499dac14c80",
-    "17724317568f73109f"
+    "17724317568f73109f",
+    "17804081624991e1bf"
   ]
 }
