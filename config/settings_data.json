@@ -239,6 +239,11 @@
           "video-title": "",
           "use-variant": "false"
         }
+      },
+      "15916265626729959012": {
+        "type": "shopify://apps/estimated-delivery-date-edd/blocks/app-embed/4efeb892-b4f9-40ae-8a13-dbe29aee2742",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
