@@ -4838,3 +4838,149 @@ details-disclosure > details {
   }
 
 }
+
+/* =========================================================
+   FIX - ADDRESS FORM BUTTON ALIGNMENT
+   ========================================================= */
+
+/* Button wrapper */
+.otp-account-order-card .otp-btn.otp-btn--primary + .otp-link,
+.otp-account-order-card .otp-btn.otp-btn--primary {
+  box-sizing: border-box !important;
+}
+
+
+/* Target the buttons container */
+.otp-account-order-card > div > div:last-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  gap: 12px !important;
+
+  width: 100% !important;
+
+  margin-top: 12px !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+}
+
+
+/* Save Address */
+.otp-account-order-card > div > div:last-child .otp-btn.otp-btn--primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: auto !important;
+  min-width: 125px !important;
+  height: 46px !important;
+
+  margin: 0 !important;
+  padding: 0 20px !important;
+
+  box-sizing: border-box !important;
+
+  border-radius: 5px !important;
+}
+
+
+/* Cancel */
+.otp-account-order-card > div > div:last-child .otp-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: auto !important;
+  min-width: 90px !important;
+  height: 46px !important;
+
+  margin: 0 !important;
+  padding: 0 20px !important;
+
+  box-sizing: border-box !important;
+
+  border-radius: 5px !important;
+
+  line-height: 1 !important;
+}
+
+
+/* Disabled Save button */
+.otp-account-order-card
+  > div
+  > div:last-child
+  .otp-btn.otp-btn--primary:disabled {
+  opacity: 1 !important;
+
+  background: #e9e7f1 !important;
+  border-color: #d8d4e7 !important;
+  color: #9995aa !important;
+}
+
+
+/* Enabled Save button */
+.otp-account-order-card
+  > div
+  > div:last-child
+  .otp-btn.otp-btn--primary:not(:disabled) {
+  background: #21165a !important;
+  border-color: #21165a !important;
+  color: #ffffff !important;
+}
+
+
+/* Save hover */
+.otp-account-order-card
+  > div
+  > div:last-child
+  .otp-btn.otp-btn--primary:not(:disabled):hover {
+  background: #b8d52b !important;
+  border-color: #b8d52b !important;
+  color: #21165a !important;
+}
+
+
+/* Cancel hover */
+.otp-account-order-card
+  > div
+  > div:last-child
+  .otp-link:hover {
+  background: #f6f5fc !important;
+  border-color: #21165a !important;
+  color: #21165a !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 699px) {
+
+  .otp-account-order-card > div > div:last-child {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 10px !important;
+
+    width: 100% !important;
+  }
+
+  .otp-account-order-card
+    > div
+    > div:last-child
+    .otp-btn.otp-btn--primary,
+  .otp-account-order-card
+    > div
+    > div:last-child
+    .otp-link {
+    height: 44px !important;
+    min-width: 0 !important;
+
+    padding: 0 16px !important;
+  }
+
+}
