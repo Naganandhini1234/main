@@ -240,19 +240,19 @@
           "use-variant": "false"
         }
       },
-      "15916265626729959012": {
-        "type": "shopify://apps/estimated-delivery-date-edd/blocks/app-embed/4efeb892-b4f9-40ae-8a13-dbe29aee2742",
+      "8529531577560427644": {
+        "type": "shopify://apps/otp/blocks/otp-plus/47f9f75c-53b3-4e16-ba66-80a88d275a5b",
         "disabled": false,
         "settings": {}
       },
       "9717370649079274736": {
         "type": "shopify://apps/otp-login-notify/blocks/app-embed-block/c26b7b17-273d-4800-af62-8ec88ba18251",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       },
-      "8529531577560427644": {
-        "type": "shopify://apps/otp/blocks/otp-plus/47f9f75c-53b3-4e16-ba66-80a88d275a5b",
-        "disabled": false,
+      "15916265626729959012": {
+        "type": "shopify://apps/estimated-delivery-date-edd/blocks/app-embed/4efeb892-b4f9-40ae-8a13-dbe29aee2742",
+        "disabled": true,
         "settings": {}
       }
     },
