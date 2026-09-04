@@ -287,35 +287,14 @@
 {%- endif -%}
 
 {% javascript %}
-  function base64UrlDecode(str) {
-  str = str.replace(/-/g, '+').replace(/_/g, '/');
-  while (str.length % 4) str += '=';
-  return decodeURIComponent(
-    atob(str)
-      .split('')
-      .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
-      .join('')
-  );
-}
-
-const updateOtpPlusAuthOnlyMenuItems = () => {
-  let isOtpLoggedIn = false;
-  try {
-    const token = localStorage.getItem('otp_plus_nca_session_token');
-    if (token) {
-      const payload = JSON.parse(base64UrlDecode(token.split('.')[1]));
-      isOtpLoggedIn = payload.exp && payload.exp * 1000 > Date.now();
-    }
-  } catch (e) {
-    isOtpLoggedIn = false;
-  }
+  const updateOtpPlusAuthOnlyMenuItems = () => {
+  const isOtpLoggedIn = !!(window.OTP_PLUS_CUSTOMER && window.OTP_PLUS_CUSTOMER.logged_in);
   document.querySelectorAll('[data-otp-auth-only]').forEach((item) => {
     item.hidden = !isOtpLoggedIn;
   });
 };
 updateOtpPlusAuthOnlyMenuItems();
 window.setInterval(updateOtpPlusAuthOnlyMenuItems, 1000);
-window.addEventListener('storage', updateOtpPlusAuthOnlyMenuItems);
 
   class StickyHeader extends HTMLElement {
     constructor() {
