@@ -4160,7 +4160,7 @@ details-disclosure > details {
    TABLET
    ========================================================= */
 
-@media screen and (max-width: 850px) {
+/* @media screen and (max-width: 850px) {
 
   .otpplus.otp-account-modal {
     width: calc(100% - 24px) !important;
@@ -4179,14 +4179,14 @@ details-disclosure > details {
     padding: 40px 30px !important;
   }
 
-}
+} */
 
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
-@media screen and (max-width: 650px) {
+/* @media screen and (max-width: 650px) {
 
   .otp-account-modal-backdrop {
     align-items: flex-start !important;
@@ -4210,9 +4210,6 @@ details-disclosure > details {
 
     height: 100% !important;
   }
-
-
-  /* Mobile sidebar */
 
   .otp-account-dashboard__sidebar {
     flex: 0 0 auto !important;
@@ -4250,9 +4247,6 @@ details-disclosure > details {
   .otp-account-dashboard__profile-phone {
     font-size: 10px !important;
   }
-
-
-  /* Horizontal navigation */
 
   .otp-account-dashboard__nav {
     flex-direction: row !important;
@@ -4305,8 +4299,6 @@ details-disclosure > details {
   }
 
 
-  /* Main */
-
   .otp-account-dashboard__main {
     flex: 1 1 auto !important;
 
@@ -4341,14 +4333,14 @@ details-disclosure > details {
     gap: 15px !important;
   }
 
-}
+} */
 
 
 /* =========================================================
    SMALL MOBILE
    ========================================================= */
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
 
   .otp-account-profile-head {
     gap: 10px !important;
@@ -4362,7 +4354,7 @@ details-disclosure > details {
     padding: 22px 15px !important;
   }
 
-}
+} */
 
 /* =========================================
    PROFILE EDIT ACTION BUTTONS
@@ -4449,7 +4441,7 @@ details-disclosure > details {
    MOBILE
    ========================================= */
 
-@media screen and (max-width: 650px) {
+/* @media screen and (max-width: 650px) {
 
   .otp-account-edit-actions {
     gap: 8px !important;
@@ -4464,7 +4456,7 @@ details-disclosure > details {
     font-size: 12px !important;
   }
 
-}
+} */
 
 /* =========================================
    ADD ADDRESS BUTTON
@@ -4791,7 +4783,7 @@ details-disclosure > details {
    MOBILE
    ========================================================= */
 
-@media screen and (max-width: 699px) {
+/* @media screen and (max-width: 699px) {
 
   .otp-account-order-card {
     padding: 18px !important;
@@ -4820,14 +4812,14 @@ details-disclosure > details {
     font-size: 12px !important;
   }
 
-}
+} */
 
 
 /* =========================================================
    SMALL MOBILE
    ========================================================= */
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
 
   .otp-account-order-card {
     padding: 15px !important;
@@ -4837,7 +4829,7 @@ details-disclosure > details {
     min-width: 110px !important;
   }
 
-}
+} */
 
 /* =========================================================
    FIX - ADDRESS FORM BUTTON ALIGNMENT
@@ -4957,7 +4949,7 @@ details-disclosure > details {
    MOBILE
    ========================================================= */
 
-@media screen and (max-width: 699px) {
+/* @media screen and (max-width: 699px) {
 
   .otp-account-order-card > div > div:last-child {
     display: flex !important;
@@ -4983,7 +4975,7 @@ details-disclosure > details {
     padding: 0 16px !important;
   }
 
-}
+} */
 
 
 
@@ -5120,7 +5112,7 @@ details-disclosure > details {
    MOBILE
    ========================================================= */
 
-@media screen and (max-width: 650px) {
+/* @media screen and (max-width: 650px) {
 
   .otp-account-dashboard__main
   .otp-account-order-card {
@@ -5151,4 +5143,4 @@ details-disclosure > details {
     font-size: 12px !important;
   }
 
-}
+} */
