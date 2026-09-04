@@ -287,6 +287,25 @@
 {%- endif -%}
 
 {% javascript %}
+  const updateOtpPlusAuthOnlyMenuItems = () => {
+    let isOtpLoggedIn = false;
+    try {
+      const token = localStorage.getItem('otp_plus_nca_session_token');
+      if (token) {
+        const payload = JSON.parse(atob(token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));
+        isOtpLoggedIn = payload.exp && payload.exp * 1000 > Date.now();
+      }
+    } catch (e) {
+      isOtpLoggedIn = false;
+    }
+    document.querySelectorAll('[data-otp-auth-only]').forEach((item) => {
+      item.hidden = !isOtpLoggedIn;
+    });
+  };
+  updateOtpPlusAuthOnlyMenuItems();
+  window.setInterval(updateOtpPlusAuthOnlyMenuItems, 1000);
+  window.addEventListener('storage', updateOtpPlusAuthOnlyMenuItems);
+  
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
