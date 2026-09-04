@@ -408,5 +408,73 @@ Variant: {{ product_data | json }}
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <!-- OTP Login App Code -->
+    <script>
+        document.addEventListener('click', (event) => {
+            if (!window.simplyOtp?.customer) {
+                // Handle cart checkout buttons
+                const checkoutButton = event.target.closest('button[name="checkout"]');
+                if (checkoutButton) {
+                    event.preventDefault();
+                    window.simplyOtp?.initializeSimplyOtp?.();
+                    window.simplyOtp?.openPopup?.();
+                    window.simplyOtp.settings.pageUrl = '/checkout';
+                    return;
+                }
+
+                // Handle single product / accelerated (buy-now) checkout button
+                const wrapper = event.composedPath().find((el) => el?.tagName === 'SHOPIFY-ACCELERATED-CHECKOUT');
+                if (wrapper) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+
+                    try {
+                        const parent = event.target.closest('product-form');
+                        const variantId = parent.querySelector('input[name="id"]').value;
+                        const quantityEl = parent.querySelector('quantity-input input[name="quantity"]') || document.querySelector('input[name="quantity"]');
+                        const productQuantity = quantityEl?.value || 1;
+
+                        window.simplyOtp?.initializeSimplyOtp?.();
+                        window.simplyOtp?.openPopup?.();
+                        window.simplyOtp.settings.pageUrl = `/cart/${variantId}:${productQuantity}`;
+                    } catch (err) {
+                        console.error('Simply OTP: failed to intercept accelerated checkout click', err);
+                    }
+                    return;
+                }
+            }
+
+            const clickLink = event.target.closest('a');
+            if (!clickLink) return;
+
+            try {
+                const clickLinkUrl = new URL(clickLink.href);
+                const path = clickLinkUrl.pathname;
+
+                const isAccountPath = /\/account(\/.*)?\/?$/.test(path);
+                const isAuthPath = path.includes('/customer_authentication/');
+                const isAccountDomain = /^accounts?\./.test(clickLinkUrl.hostname) || clickLinkUrl.hostname.includes('account');
+
+                if (isAccountPath || isAuthPath || isAccountDomain) {
+                    if (path.includes('/account/logout')) return;
+
+                    event.preventDefault();
+                    if (!window.simplyOtp?.customer) {
+                        window.simplyOtp.settings.pageUrl = window.location.href;
+                    }
+                    window.simplyOtp.openLoginOrAccountModal();
+                }
+            } catch (e) {
+                const href = clickLink.getAttribute('href') || '';
+                if (href.endsWith('/account') || href.includes('/account/')) {
+                    event.preventDefault();
+                    window.simplyOtp.openLoginOrAccountModal();
+                }
+            }
+        }, true);
+    </script>
+    <!-- OTP Login App Code -->
   </body>
 </html>
