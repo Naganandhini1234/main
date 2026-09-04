@@ -4984,3 +4984,235 @@ details-disclosure > details {
   }
 
 }
+
+
+
+/* =========================================================
+   CASTERLY - MY ORDERS PAGE
+   ========================================================= */
+
+/* Page heading */
+.otp-account-dashboard__main h2 {
+  margin: 0 0 24px !important;
+
+  color: #21165a !important;
+
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+
+  letter-spacing: -0.01em !important;
+}
+
+
+/* =========================================================
+   ORDER CARD
+   ========================================================= */
+
+.otp-account-order-card {
+  box-sizing: border-box !important;
+
+  width: 100% !important;
+
+  margin: 0 0 14px !important;
+  padding: 18px 20px !important;
+
+  background: #ffffff !important;
+
+  border: 1px solid #e4e1f0 !important;
+  border-radius: 7px !important;
+
+  box-shadow: 0 2px 8px rgba(33, 22, 90, 0.035) !important;
+
+  color: #21165a !important;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease !important;
+}
+
+
+/* Card hover */
+
+.otp-account-order-card:hover {
+  border-color: #d3cfe3 !important;
+
+  box-shadow: 0 5px 16px rgba(33, 22, 90, 0.07) !important;
+
+  transform: translateY(-1px) !important;
+}
+
+
+/* =========================================================
+   ORDER HEADER
+   ========================================================= */
+
+.otp-account-order-card__header {
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  gap: 15px !important;
+
+  margin-bottom: 7px !important;
+}
+
+
+/* Order number */
+
+.otp-account-order-card__header strong {
+  color: #21165a !important;
+
+  font-size: 16px !important;
+  font-weight: 700 !important;
+
+  line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   ORDER STATUS BADGE
+   ========================================================= */
+
+.otp-account-badge {
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-height: 25px !important;
+
+  padding: 4px 10px !important;
+
+  border-radius: 4px !important;
+
+  background: #f3f1fa !important;
+
+  border: 1px solid #ddd9ed !important;
+
+  color: #3d2b80 !important;
+
+  font-size: 10px !important;
+  font-weight: 700 !important;
+
+  letter-spacing: 0.06em !important;
+  line-height: 1.2 !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* Fulfilled */
+
+.otp-account-order-card__header
+  .otp-account-badge {
+  /* Keep badge compact */
+}
+
+
+/* =========================================================
+   ORDER DATE + PRICE
+   ========================================================= */
+
+.otp-account-order-card > p:first-of-type {
+  margin: 5px 0 8px !important;
+
+  color: #77738c !important;
+
+  font-size: 12px !important;
+  font-weight: 400 !important;
+
+  line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   PRODUCT DETAILS
+   ========================================================= */
+
+.otp-account-order-card > p:last-of-type {
+  margin: 0 !important;
+
+  color: #21165a !important;
+
+  font-size: 13px !important;
+  font-weight: 500 !important;
+
+  line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   SMALL LIME ACCENT
+   ========================================================= */
+
+.otp-account-order-card__header::before {
+  content: "" !important;
+
+  width: 3px !important;
+  height: 22px !important;
+
+  flex: 0 0 3px !important;
+
+  background: #b8d52b !important;
+
+  border-radius: 2px !important;
+
+  order: -1 !important;
+}
+
+
+/* Keep header content together */
+
+.otp-account-order-card__header {
+  position: relative !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 650px) {
+
+  .otp-account-dashboard__main h2 {
+    margin-bottom: 18px !important;
+
+    font-size: 21px !important;
+  }
+
+
+  .otp-account-order-card {
+    padding: 15px !important;
+
+    margin-bottom: 12px !important;
+  }
+
+
+  .otp-account-order-card__header {
+    gap: 10px !important;
+  }
+
+
+  .otp-account-order-card__header strong {
+    font-size: 14px !important;
+  }
+
+
+  .otp-account-badge {
+    min-height: 23px !important;
+
+    padding: 3px 8px !important;
+
+    font-size: 9px !important;
+  }
+
+
+  .otp-account-order-card > p:first-of-type,
+  .otp-account-order-card > p:last-of-type {
+    font-size: 12px !important;
+  }
+
+}
