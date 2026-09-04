@@ -3602,7 +3602,8 @@ details-disclosure > details {
 
 /* =========================================================
    CASTERLY - OTP ACCOUNT
-   Theme Variables + Component Styling
+   Premium UI Styling
+   Layout intentionally untouched
    ========================================================= */
 
 :root {
@@ -3611,7 +3612,7 @@ details-disclosure > details {
   --casterly-purple: #3d2b80;
   --casterly-lime: #b8d52b;
 
-  /* Backgrounds */
+  /* Surfaces */
   --casterly-white: #ffffff;
   --casterly-surface: #faf9fd;
   --casterly-surface-alt: #f6f5fc;
@@ -3630,18 +3631,22 @@ details-disclosure > details {
   --casterly-status-border: #ddd9ed;
 
   /* Effects */
-  --casterly-focus: rgba(184, 213, 43, 0.15);
+  --casterly-focus: rgba(184, 213, 43, 0.16);
   --casterly-shadow: 0 2px 8px rgba(33, 22, 90, 0.04);
+  --casterly-shadow-hover: 0 8px 22px rgba(33, 22, 90, 0.09);
 
   /* Radius */
   --casterly-radius-sm: 5px;
   --casterly-radius-md: 7px;
   --casterly-radius-lg: 8px;
+
+  /* Motion */
+  --casterly-transition: 180ms ease;
 }
 
 
 /* =========================================================
-   ACCOUNT MODAL
+   MODAL
    ========================================================= */
 
 .otpplus.otp-account-modal {
@@ -3659,16 +3664,44 @@ details-disclosure > details {
   background: var(--casterly-white) !important;
   border-color: var(--casterly-border) !important;
   box-shadow: var(--casterly-shadow) !important;
+
+  transition:
+    border-color var(--casterly-transition),
+    box-shadow var(--casterly-transition) !important;
 }
+
+.otp-account-dashboard__profile-card:hover {
+  border-color: var(--casterly-border-dark) !important;
+  box-shadow: var(--casterly-shadow-hover) !important;
+}
+
+
+/* Avatar */
 
 .otp-account-dashboard__avatar {
   background: var(--casterly-navy) !important;
   color: var(--casterly-lime) !important;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease !important;
 }
+
+.otp-account-dashboard__profile-card:hover
+.otp-account-dashboard__avatar {
+  transform: scale(1.04) !important;
+  box-shadow: 0 4px 12px rgba(33, 22, 90, 0.16) !important;
+}
+
+
+/* Profile name */
 
 .otp-account-dashboard__profile-text strong {
   color: var(--casterly-navy) !important;
 }
+
+
+/* Profile secondary information */
 
 .otp-account-dashboard__profile-email,
 .otp-account-dashboard__profile-phone {
@@ -3682,22 +3715,40 @@ details-disclosure > details {
 
 .otp-account-modal__close {
   color: var(--casterly-navy) !important;
+  background: transparent !important;
+
+  transition:
+    color var(--casterly-transition),
+    background-color var(--casterly-transition),
+    transform var(--casterly-transition) !important;
 }
 
 .otp-account-modal__close:hover {
   color: var(--casterly-purple) !important;
+  background: var(--casterly-surface-alt) !important;
+
+  transform: rotate(90deg) !important;
+}
+
+.otp-account-modal__close:active {
+  transform: rotate(90deg) scale(0.92) !important;
 }
 
 
 /* =========================================================
    ACCOUNT NAVIGATION
-   Layout is intentionally untouched.
+   Layout remains controlled by the app
    ========================================================= */
 
 .otp-account-dashboard__nav-item {
   color: var(--casterly-navy) !important;
   background: transparent !important;
   border-color: transparent !important;
+
+  transition:
+    color var(--casterly-transition),
+    background-color var(--casterly-transition),
+    box-shadow var(--casterly-transition) !important;
 }
 
 .otp-account-dashboard__nav-item:hover {
@@ -3705,14 +3756,30 @@ details-disclosure > details {
   background: var(--casterly-surface-alt) !important;
 }
 
+
+/* Active navigation */
+
 .otp-account-dashboard__nav-item--active {
   color: var(--casterly-navy) !important;
   background: var(--casterly-white) !important;
+
+  box-shadow:
+    0 3px 10px rgba(33, 22, 90, 0.05) !important;
 }
+
+
+/* Active lime indicator */
 
 .otp-account-dashboard__nav-item--active::before {
   background: var(--casterly-lime) !important;
+
+  transition:
+    background-color var(--casterly-transition),
+    transform var(--casterly-transition) !important;
 }
+
+
+/* Navigation subtitle */
 
 .otp-account-dashboard__nav-sub {
   color: var(--casterly-muted) !important;
@@ -3738,7 +3805,7 @@ details-disclosure > details {
 
 
 /* =========================================================
-   PROFILE FIELDS
+   PROFILE INPUTS
    ========================================================= */
 
 .otp-account-field label {
@@ -3749,13 +3816,25 @@ details-disclosure > details {
   color: var(--casterly-text) !important;
   background: var(--casterly-surface) !important;
   border-color: var(--casterly-border) !important;
+
   box-shadow: none !important;
+
+  transition:
+    border-color var(--casterly-transition),
+    background-color var(--casterly-transition),
+    box-shadow var(--casterly-transition) !important;
+}
+
+.otp-account-field input:hover {
+  border-color: var(--casterly-border-dark) !important;
 }
 
 .otp-account-field input:focus {
   background: var(--casterly-white) !important;
   border-color: var(--casterly-lime) !important;
-  box-shadow: 0 0 0 2px var(--casterly-focus) !important;
+
+  box-shadow:
+    0 0 0 3px var(--casterly-focus) !important;
 }
 
 
@@ -3767,17 +3846,33 @@ details-disclosure > details {
   color: var(--casterly-white) !important;
   background: var(--casterly-navy) !important;
   border-color: var(--casterly-navy) !important;
+
+  transition:
+    color var(--casterly-transition),
+    background-color var(--casterly-transition),
+    border-color var(--casterly-transition),
+    box-shadow var(--casterly-transition),
+    transform var(--casterly-transition) !important;
 }
 
 .otp-account-edit-btn:hover {
   color: var(--casterly-navy) !important;
   background: var(--casterly-lime) !important;
   border-color: var(--casterly-lime) !important;
+
+  box-shadow:
+    0 5px 14px rgba(184, 213, 43, 0.22) !important;
+
+  transform: translateY(-1px) !important;
+}
+
+.otp-account-edit-btn:active {
+  transform: translateY(0) scale(0.98) !important;
 }
 
 
 /* =========================================================
-   PRIMARY / SECONDARY ACCOUNT BUTTONS
+   ACCOUNT BUTTONS
    ========================================================= */
 
 .otp-account-btn--primary,
@@ -3785,6 +3880,13 @@ details-disclosure > details {
   color: var(--casterly-white) !important;
   background: var(--casterly-navy) !important;
   border-color: var(--casterly-navy) !important;
+
+  transition:
+    color var(--casterly-transition),
+    background-color var(--casterly-transition),
+    border-color var(--casterly-transition),
+    box-shadow var(--casterly-transition),
+    transform var(--casterly-transition) !important;
 }
 
 .otp-account-btn--primary:hover:not(:disabled),
@@ -3792,42 +3894,109 @@ details-disclosure > details {
   color: var(--casterly-navy) !important;
   background: var(--casterly-lime) !important;
   border-color: var(--casterly-lime) !important;
+
+  box-shadow:
+    0 5px 14px rgba(184, 213, 43, 0.22) !important;
+
+  transform: translateY(-1px) !important;
 }
+
+.otp-account-btn--primary:active:not(:disabled),
+.otp-btn--primary:active:not(:disabled) {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+
+/* Secondary */
 
 .otp-account-btn--secondary {
   color: var(--casterly-navy) !important;
   background: var(--casterly-white) !important;
   border-color: var(--casterly-border-dark) !important;
+
+  transition:
+    color var(--casterly-transition),
+    background-color var(--casterly-transition),
+    border-color var(--casterly-transition),
+    box-shadow var(--casterly-transition) !important;
 }
 
 .otp-account-btn--secondary:hover {
+  color: var(--casterly-navy) !important;
   background: var(--casterly-surface-alt) !important;
   border-color: var(--casterly-navy) !important;
+
+  box-shadow:
+    0 4px 12px rgba(33, 22, 90, 0.07) !important;
 }
 
 
-/* =========================================================
-   DISABLED PRIMARY BUTTON
-   ========================================================= */
+/* Disabled */
 
 .otp-account-btn--primary:disabled,
 .otp-btn--primary:disabled {
   color: var(--casterly-placeholder) !important;
   background: #e9e7f1 !important;
   border-color: var(--casterly-border-dark) !important;
+
   opacity: 1 !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 
 /* =========================================================
-   ORDER / ADDRESS CARD
+   LOG OUT
+   ========================================================= */
+
+.otp-account-dashboard__logout button {
+  color: #a33a46 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+
+  transition:
+    color var(--casterly-transition),
+    background-color var(--casterly-transition),
+    border-color var(--casterly-transition),
+    box-shadow var(--casterly-transition) !important;
+}
+
+.otp-account-dashboard__logout button:hover {
+  color: #8f2633 !important;
+  background: #fff4f4 !important;
+  border-color: #f0d6d9 !important;
+
+  box-shadow:
+    0 3px 10px rgba(163, 58, 70, 0.08) !important;
+}
+
+.otp-account-dashboard__logout button:active {
+  transform: scale(0.98) !important;
+}
+
+
+/* =========================================================
+   ORDER CARDS
    ========================================================= */
 
 .otp-account-order-card {
   color: var(--casterly-text) !important;
   background: var(--casterly-white) !important;
   border-color: var(--casterly-border) !important;
+
   box-shadow: var(--casterly-shadow) !important;
+
+  transition:
+    border-color var(--casterly-transition),
+    box-shadow var(--casterly-transition),
+    transform var(--casterly-transition) !important;
+}
+
+.otp-account-order-card:hover {
+  border-color: var(--casterly-border-dark) !important;
+  box-shadow: var(--casterly-shadow-hover) !important;
+
+  transform: translateY(-1px) !important;
 }
 
 .otp-account-order-card__header strong {
@@ -3843,6 +4012,11 @@ details-disclosure > details {
   color: var(--casterly-purple) !important;
   background: var(--casterly-status-bg) !important;
   border-color: var(--casterly-status-border) !important;
+
+  transition:
+    background-color var(--casterly-transition),
+    border-color var(--casterly-transition),
+    color var(--casterly-transition) !important;
 }
 
 
@@ -3858,24 +4032,68 @@ details-disclosure > details {
   color: var(--casterly-text) !important;
   background: var(--casterly-surface) !important;
   border-color: var(--casterly-border) !important;
+
   box-shadow: none !important;
+
+  transition:
+    border-color var(--casterly-transition),
+    background-color var(--casterly-transition),
+    box-shadow var(--casterly-transition) !important;
+}
+
+.otp-account-order-card input:hover {
+  border-color: var(--casterly-border-dark) !important;
 }
 
 .otp-account-order-card input:focus {
   background: var(--casterly-white) !important;
   border-color: var(--casterly-lime) !important;
-  box-shadow: 0 0 0 2px var(--casterly-focus) !important;
+
+  box-shadow:
+    0 0 0 3px var(--casterly-focus) !important;
 }
 
 
 /* =========================================================
-   LINKS
+   ADDRESS CANCEL LINK
    ========================================================= */
 
 .otp-link {
   color: var(--casterly-navy) !important;
+
+  transition:
+    color var(--casterly-transition),
+    opacity var(--casterly-transition) !important;
 }
 
 .otp-link:hover {
   color: var(--casterly-purple) !important;
+}
+
+
+/* =========================================================
+   KEYBOARD FOCUS
+   ========================================================= */
+
+.otp-account-dashboard button:focus-visible,
+.otp-account-dashboard input:focus-visible {
+  outline: 2px solid var(--casterly-lime) !important;
+  outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .otp-account-dashboard *,
+  .otp-account-dashboard *::before,
+  .otp-account-dashboard *::after {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
 }
